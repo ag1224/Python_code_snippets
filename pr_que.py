@@ -13,7 +13,7 @@ class PriorityQueue:
     largest = i
     if l < self.curr_size and self.a[i] < self.a[l]:
       largest = l
-    if r < self.curr_size and self.a[largest] < self.a[r]:
+    elif r < self.curr_size and self.a[largest] < self.a[r]:
       largest = r
     if largest != i:
       self.a[i], self.a[largest] = self.a[largest], self.a[i]
@@ -40,15 +40,6 @@ class PriorityQueue:
     while self.a[self.parent(i)] < x:
       self.a[i], self.a[self.parent(i)] = self.a[self.parent(i)], self.a[i]
       i = (i - 1) // 2
-  def printq(self):
-    print(self.a)
- 
+    
     
 m1 = PriorityQueue([1, 5, -9, 65, 35])
-m2 = PriorityQueue([0, 54, -57, 3, 10])
-m1.printq()
-m2.printq()
-
-print(m1.maximum())
-
-
